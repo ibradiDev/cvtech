@@ -1,0 +1,30 @@
+<h4 class="text-center">CV'S TABLE</h4>
+<hr />
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#ID</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th>Job</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Owner</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let cv of cvs; let i = index">
+    <tr>
+      <td>#{{ i + 1 }}</td>
+      <td>{{ cv.firstname }}</td>
+      <td>{{ cv.lastname }}</td>
+      <td>{{ cv.job }}</td>
+      <td>{{ cv.phone }}</td>
+      <td>{{ cv.email }}</td>
+      <td>{{ cv.owner["username"] }}</td>
+      <td>
+        <span class="btn btn-danger">Delete</span>
+      </td>
+    </tr>
+  </tbody>
+</table>

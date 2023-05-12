@@ -1,0 +1,15 @@
+<div class="container mt-5 pt-5 text-center">
+  <div class="mt-4">
+    <h1><span style="color: blue">Welcome</span> to CvTECH</h1>
+    <h4>Your CV manage box</h4>
+    <p>
+      Store all your employee's, family member's or other else CV in a secure
+      database.
+      <br />
+      <em>Stop filling your office with docs!</em>
+    </p>
+  </div>
+  <div *ngIf="!autentified">
+    <app-login></app-login>
+  </div>
+</div>

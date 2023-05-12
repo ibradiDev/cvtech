@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a routerLink="/home" class="navbar-brand text-primary"
+      ><strong>CvTECH<span class="red-point">.</span></strong></a
+    >
+    <button
+      class="navbar-toggler"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active">
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cvs" routerLinkActive="active"
+            >CV's-list</a
+          >
+        </li>
+        <li class="nav-item" *ngIf="autentified && userRole === 'Admin'">
+          <a
+            class="nav-link"
+            routerLink="/administration"
+            routerLinkActive="active"
+            >Administration</a
+          >
+        </li>
+      </ul>
+      <div class="me-4" *ngIf="autentified">
+        <div class="dropdown float-end">
+          <div data-bs-toggle="dropdown">
+            {{ userRole + " | " + user?.name }}
+            <span *ngIf="photoURL">
+              <img
+                [src]="photoURL"
+                alt=""
+                width="25px"
+                height="25px"
+                style="border-radius: 50px"
+              />
+            </span>
+            <span class="dropdown-toggle"></span>
+          </div>
+
+          <ul class="dropdown-menu">
+            <li class="dropdown-item-text" routerLink="/">voir le profile</li>
+            <li class="dropdown-divider"></li>
+            <li class="dropdown-item-text text-danger" (click)="logout()">
+              logout
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

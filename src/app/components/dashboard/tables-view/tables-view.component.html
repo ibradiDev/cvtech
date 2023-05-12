@@ -1,0 +1,17 @@
+<div class="navbar-nav-scroll" [ngSwitch]="clickedBtn">
+  <div *ngSwitchCase="'admins'">
+    <h4 class="text-center">ADMIN'S TABLE</h4>
+    <hr />
+    <app-users-table [members]="admins"></app-users-table>
+  </div>
+
+  <div *ngSwitchCase="'users'">
+    <h4 class="text-center">USER'S TABLE</h4>
+    <hr />
+    <app-users-table [members]="users"></app-users-table>
+  </div>
+
+  <div *ngSwitchDefault>
+    <app-cvs-table></app-cvs-table>
+  </div>
+</div>

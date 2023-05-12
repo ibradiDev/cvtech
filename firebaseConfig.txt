@@ -1,0 +1,22 @@
+
+    // INTEGRATION DE FIREBASE
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: 'AIzaSyDfDLU09iW4CpQeUQxmC59xKsbz2DLCG0I',
+  authDomain: 'first-project-uvci.firebaseapp.com',
+  projectId: 'first-project-uvci',
+  storageBucket: 'first-project-uvci.appspot.com',
+  messagingSenderId: '305067373788',
+  appId: '1:305067373788:web:4c6c565afd24bce65bf019',
+  measurementId: 'G-0JRWE2YLWR',
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);

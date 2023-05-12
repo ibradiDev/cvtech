@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="cvForm">
+    <h3>{{ editMode ? "CV Edition Form" : "CV Creation Form" }}</h3>
+    <div class="form-group">
+      <label for="">Firstname</label>
+      <input class="form-control" type="text" formControlName="firstname" />
+    </div>
+    <div class="form-group">
+      <label for="">Lastname</label>
+      <input class="form-control" type="text" formControlName="lastname" />
+    </div>
+    <div class="form-group">
+      <label for="">Job</label>
+      <input class="form-control" type="text" formControlName="job" />
+    </div>
+    <div class="form-group">
+      <label for="">Email</label>
+      <input class="form-control" type="text" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label for="">Phone</label>
+      <input class="form-control" type="text" formControlName="phone" />
+    </div>
+    <div class="form-group">
+      <label for="">Photo</label><br />
+      <button
+        class="btn btn-outline-primary me-2"
+        [ngClass]="photoName ? 'undisplayed' : ''"
+        (click)="photo.click()"
+      >
+        Choose a photo
+      </button>
+      <img
+        [src]="photoURL"
+        [ngClass]="!photoURL ? 'undisplayed' : 'me-2'"
+        width="140px"
+        height="auto"
+      />
+      <span>{{ photoName }}</span>
+      <button
+        class="btn btn-danger ms-1"
+        [ngClass]="!photoName ? 'undisplayed' : ''"
+        (click)="removePhoto()"
+      >
+        X
+      </button>
+      <input
+        class="form-control undisplayed"
+        #photo
+        type="file"
+        accept="image/*"
+        (change)="setPhotoURL(photo.files![0])"
+      />
+    </div>
+    <button class="btn btn-success mt-2" (click)="submit(cvForm.value)">
+      {{ editMode ? "Update" : "Create" }}
+    </button>
+  </form>
+</div>
